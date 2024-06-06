@@ -50,12 +50,13 @@ Replace bubble_sort_visualization.py with the filename of the sorting algorithm 
 
 | Sorting Algorithm | GIF |
 |---|---|
-| Bubble Sort | ![Bubble Sort GIF](/GIFs/bubble_sort_simulation.gif) |
-| Quick Sort | ![Quick Sort GIF](/GIFs/quick_sort_simulation.gif) |
-| Selection Sort | ![Selection Sort GIF](/GIFs/selection_sort_simulation.gif) |
-| Insertion Sort | ![Insertion Sort GIF](/GIFs/insertion_sort_simulation.gif) |
-| Shell Sort | ![Shell Sort GIF](/GIFs/shell_sort_simulation.gif) |
-| Heap Sort | ![Heap Sort GIF](/GIFs/heap_sort_simulation.gif) |
+| Bubble Sort | <img src="/GIFs/bubble_sort_simulation.gif" width="300"> |
+| Quick Sort | <img src="/GIFs/quick_sort_simulation.gif" width="300"> |
+| Selection Sort | <img src="/GIFs/selection_sort_simulation.gif" width="300"> |
+| Insertion Sort | <img src="/GIFs/insertion_sort_simulation.gif" width="300"> |
+| Shell Sort | <img src="/GIFs/shell_sort_simulation.gif" width="300"> |
+| Heap Sort | <img src="/GIFs/heap_sort_simulation.gif" width="300"> |
+
 
 
 ## Contributing:
