@@ -22,8 +22,8 @@ This repository contains Python implementations of sorting algorithms visualized
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/ariktheone/Sorting-Algo-Visualization.git
-cd sorting-algorithm-visualizations
+git clone https://github.com/ariktheone/Sorting_Algo_Visualization.git
+cd Sorting_Algo_Visualization
 ```
 2. Install the required dependencies:
 
