@@ -1,5 +1,6 @@
 import pygame
 import random
+from PIL import Image
 
 class QuickSortVisualization:
     def __init__(self, arr):
@@ -16,7 +17,7 @@ class QuickSortVisualization:
         self.max_height = max(self.arr)
         self.done = False
         self.paused = False
-        self.record = False
+        self.record = True
         self.frames = []
         self.speed = 50  # Initial speed
         self.sorting = False
@@ -69,7 +70,7 @@ class QuickSortVisualization:
         self.colors = [(0, 255, 0) for _ in range(self.size)]  # Set the color for sorted bars
         self.draw_bars("Sorting Completed")
         if self.record:
-            self.save_video()
+            self.save_gif()
 
         while not self.done:
             for event in pygame.event.get():
@@ -78,29 +79,23 @@ class QuickSortVisualization:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         self.paused = not self.paused  # Pause or resume on spacebar press
-                    elif event.key == pygame.K_r:
-                        self.record = True  # Start recording on 'r' press
                     elif event.key == pygame.K_UP:
                         self.speed = min(300, self.speed + 10)  # Increase speed
                     elif event.key == pygame.K_DOWN:
                         self.speed = max(10, self.speed - 10)  # Decrease speed
 
             if self.record:
-                self.save_video()
+                self.save_gif()
 
         pygame.quit()
 
-    def save_video(self):
-        import cv2
-
-        height, width, _ = self.frames[0].shape
-        out = cv2.VideoWriter('quick_sort_simulation.avi', cv2.VideoWriter_fourcc(*'DIVX'), 30, (width, height))
-
-        for frame in self.frames:
-            out.write(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-
-        out.release()
-        print("Video saved successfully!")
+    def save_gif(self):
+        try:
+            pil_images = [Image.fromarray(frame.swapaxes(0, 1)) for frame in self.frames]  # Convert to PIL Images
+            pil_images[0].save('quick_sort_simulation.gif', save_all=True, append_images=pil_images[1:], loop=0, duration=1000//30)  # Save as GIF
+            print("GIF saved successfully!")
+        except Exception as e:
+            print(f"Error saving GIF: {e}")
 
 # Usage
 arr = random.sample(range(1, 101), 100)  # Generate 100 unique random integers between 1 and 100

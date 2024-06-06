@@ -1,5 +1,6 @@
 import pygame
 import random
+from PIL import Image
 
 class HeapSortVisualization:
     def __init__(self, arr):
@@ -16,7 +17,7 @@ class HeapSortVisualization:
         self.max_height = max(self.arr)
         self.done = False
         self.paused = False
-        self.record = False
+        self.record = True  # Start recording immediately
         self.frames = []
         self.speed = 50  # Initial speed
         self.sorting = False
@@ -38,7 +39,8 @@ class HeapSortVisualization:
             # Redraw the bars with different colors after each swap
             self.colors = [(0, 255, 0) if k == i or k == largest else (255, 255, 255) for k in range(self.size)]
             self.draw_bars(f"Swapping: {self.arr[i]} and {self.arr[largest]}")
-            self.frames.append(pygame.surfarray.array3d(self.screen))  # Record frame
+            if self.record:
+                self.frames.append(pygame.surfarray.array3d(self.screen))  # Record frame
             pygame.display.update()  # Update display after drawing bars
             self.clock.tick(self.speed)  # Adjust the frame rate
 
@@ -86,29 +88,17 @@ class HeapSortVisualization:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
                         self.paused = not self.paused  # Pause or resume on spacebar press
-                    elif event.key == pygame.K_r:
-                        self.record = True  # Start recording on 'r' press
                     elif event.key == pygame.K_UP:
                         self.speed = min(300, self.speed + 10)  # Increase speed
                     elif event.key == pygame.K_DOWN:
                         self.speed = max(10, self.speed - 10)  # Decrease speed
 
-            if self.record:
-                self.save_video()
-
         pygame.quit()
 
     def save_video(self):
-        import cv2
-
-        height, width, _ = self.frames[0].shape
-        out = cv2.VideoWriter('heap_sort_simulation.avi', cv2.VideoWriter_fourcc(*'DIVX'), 30, (width, height))
-
-        for frame in self.frames:
-            out.write(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-
-        out.release()
-        print("Video saved successfully!")
+        pil_images = [Image.fromarray(frame.swapaxes(0, 1)) for frame in self.frames]  # Convert to PIL Images
+        pil_images[0].save('heap_sort_simulation.gif', save_all=True, append_images=pil_images[1:], loop=0, duration=1000//30)  # Save as GIF
+        print("GIF saved successfully!")
 
 # Usage
 arr = random.sample(range(1, 101), 100)  # Generate 100 unique random integers between 1 and 100
