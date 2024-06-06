@@ -46,6 +46,15 @@ Replace bubble_sort_visualization.py with the filename of the sorting algorithm 
 - Pause and resume functionality.
 - Record the visualization as a GIF.
 
+## Output Figures:
+
+1. Bubble Sort 
+2. Quick Sort 
+3. Selection 
+4. Insertion 
+5. Shell Sort 
+6. Heap Sort 
+
 ## Contributing:
 
 Contributions are welcome! Feel free to open issues or pull requests with suggestions, bug fixes, or additional sorting algorithms.
