@@ -70,7 +70,7 @@ Replace bubble_sort_visualization.py with the filename of the sorting algorithm 
 
 7. Heap Sort 
 
-[Link to the gif file](/GIFs/heap_sort_simulation.gif)
+![Link to the gif file](/GIFs/heap_sort_simulation.gif)
 
 ## Contributing:
 
