@@ -49,7 +49,7 @@ Replace bubble_sort_visualization.py with the filename of the sorting algorithm 
 ## Output Figures:
 
 | Sorting Algorithm | GIF |
-|---|---|
+|---|---|---|---|
 | Bubble Sort | <img src="/GIFs/bubble_sort_simulation.gif" width="300"> |
 | Quick Sort | <img src="/GIFs/quick_sort_simulation.gif" width="300"> |
 | Selection Sort | <img src="/GIFs/selection_sort_simulation.gif" width="300"> |
