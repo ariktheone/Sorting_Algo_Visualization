@@ -50,27 +50,27 @@ Replace bubble_sort_visualization.py with the filename of the sorting algorithm 
 
 1. Bubble Sort
 
-![Link to the gif file](/GIFs/bubble_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/bubble_sort_simulation.gif)
  
 2. Quick Sort 
 
-![Link to the gif file](/GIFs/quick_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/quick_sort_simulation.gif)
 
-4. Selection 
+3. Selection 
 
-![Link to the gif file](/GIFs/selection_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/selection_sort_simulation.gif)
 
-5. Insertion 
+4. Insertion 
 
-![Link to the gif file](/GIFs/insertion_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/insertion_sort_simulation.gif)
 
-6. Shell Sort 
+5. Shell Sort 
 
-![Link to the gif file](/GIFs/shell_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/shell_sort_simulation.gif)
 
-7. Heap Sort 
+6. Heap Sort 
 
-![Link to the gif file](/GIFs/heap_sort_simulation.gif)
+ ![Link to the gif file](/GIFs/heap_sort_simulation.gif)
 
 ## Contributing:
 
